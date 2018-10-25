@@ -1,0 +1,32 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <h2>My Orders</h2>
+               {{# each orders }}
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <ul class="list-group">
+                        {{# each this.items }}
+                            <li class="list-group-item">
+                                <span class="badge">{{ this.price }}</span> {{ this.item.title }} | {{ this.qty }} Qty(s)
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <div class="panel-footer">
+                    <strong>Total: Rs{{ this.cart.totalPrice }}</strong>
+
+                </div>
+
+    </div>
+               {{/each}}
+</div>
+</div>
